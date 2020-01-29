@@ -9,9 +9,17 @@ jobs:
     # checkout the repo
     - name: 'Checkout Github Action' 
       uses: actions/checkout@master
+    
+    - name: 'Login via Azure CLI'
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.azure_credentials }}
       
     - uses: azure/webapps-container-deploy@v1
       with:
         app-name: 'ghactionsbbtest '
-        publish-profile: ${{ secrets.publish_profile}}
         images: 'shanu07/helloworld'
+
+    - name: Azure logout
+      run: |
+        az logout
