@@ -1,0 +1,16 @@
+on: [push]
+
+name: Windows_Container_Workflow
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    # checkout the repo
+    - name: 'Checkout Github Action' 
+      uses: actions/checkout@master
+      
+     - uses: azure/webapps-container-deploy@v1
+      with:
+        app-name: 'ghactionsbbtest'
+        images: 'shanu07/helloworld'
