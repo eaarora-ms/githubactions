@@ -10,7 +10,7 @@ jobs:
     - name: 'Checkout Github Action' 
       uses: actions/checkout@master
       
-     - uses: azure/webapps-container-deploy@v1
+    - uses: azure/webapps-container-deploy@v1
       with:
-        app-name: 'ghactionsbbtest'
+        app-name: 'ghactionsbbtest '
         images: 'shanu07/helloworld'
