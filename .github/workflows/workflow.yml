@@ -13,5 +13,5 @@ jobs:
     - uses: azure/webapps-container-deploy@v1
       with:
         app-name: 'ghactionsbbtest '
-        images: 'shanu07/helloworld'
         publish-profile: ${{ secrets.publish_profile}}
+        images: 'shanu07/helloworld'
